@@ -1,0 +1,32 @@
+{
+    "name": "qazando-automation",
+    "version": "1.0.0",
+    "description": "Projeto de testes automatizados qazando",
+    "main": "index.js",
+    "scripts": {
+        "android": "codeceptjs run -c codecept.conf.js --override '{\"helpers\": {\"Appium\": {\"platform\": \"Android\",\"app\": \"C:/Users/kdaraujo/Documents/app-release.apk\",\"desiredCapabilities\": {\"appPackage\": \"com.qazandoapp\",\"appActivity\": \"MainActivity\",\"deviceName\": \"Pixel\",\"platformVersion\": \"9\" }}}}'",
+        "test": "npx codeceptjs run --steps",
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "codeceptjs:ui": "codecept-ui --app",
+        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "mochawesome": "^7.0.1",
+        "node-random-name": "^1.0.1",
+        "random-number": "^0.0.9",
+        "webdriverio": "^7.2.3"
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^0.7.0",
+        "@codeceptjs/examples": "^1.2.1",
+        "@codeceptjs/ui": "^0.4.6",
+        "codeceptjs": "^3.2.3",
+        "mocha": "^9.2.0",
+        "playwright": "^1.18.1"
+    }
+}
